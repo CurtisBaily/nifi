@@ -1216,11 +1216,14 @@ public class FlowResource extends ApplicationResource {
 
         // get the banner from the properties - will come from the NCM when clustered
         final String bannerText = getProperties().getBannerText();
+        final String bannerColor = getProperties().getBannerColor();
 
         // create the DTO
         final BannerDTO bannerDTO = new BannerDTO();
         bannerDTO.setHeaderText(bannerText);
         bannerDTO.setFooterText(bannerText);
+        bannerDTO.setHeaderColor(bannerColor);
+        bannerDTO.setFooterColor(bannerColor);
 
         // create the response entity
         final BannerEntity entity = new BannerEntity();

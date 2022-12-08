@@ -246,6 +246,7 @@ public class NiFiProperties extends ApplicationProperties {
 
     // ui properties
     public static final String UI_BANNER_TEXT = "nifi.ui.banner.text";
+    public static final String UI_BANNER_COLOR = "nifi.ui.banner.color";
     public static final String UI_AUTO_REFRESH_INTERVAL = "nifi.ui.autorefresh.interval";
 
     // cluster common properties
@@ -840,6 +841,15 @@ public class NiFiProperties extends ApplicationProperties {
      */
     public String getBannerText() {
         return this.getProperty(UI_BANNER_TEXT, StringUtils.EMPTY);
+    }
+
+    /**
+     * Get the banner color.
+     *
+     * @return The banner color
+     */
+    public String getBannerColor() {
+        return this.getProperty(UI_BANNER_COLOR, StringUtils.EMPTY);
     }
 
     /**

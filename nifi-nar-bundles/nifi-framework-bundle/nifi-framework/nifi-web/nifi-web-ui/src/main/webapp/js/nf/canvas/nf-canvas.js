@@ -854,6 +854,17 @@
                     if (nfCommon.isDefinedAndNotNull(response.banners.headerText) && response.banners.headerText !== '') {
                         // update the header text and show it
                         $('#banner-header').addClass('banner-header-background').text(response.banners.headerText).show();
+                        if (nfCommon.isDefinedAndNotNull(response.banners.headerColor) && response.banners.headerColor !== '') {
+                            $('#banner-header').css('background-color', response.banners.headerColor);
+                            var bgColor = $('#banner-header').css('background-color');
+                            var rgb = bgColor.substring(4, bgColor.length-1).replace(/ /g, '').split(',');
+                            var brightness = Math.round((
+                                    (parseInt(rgb[0]) * 299) +
+                                    (parseInt(rgb[1]) * 587) +
+                                    (parseInt(rgb[2]) * 114)) / 1000);
+                            var textColor = brightness > 125 ? 'black' : 'white'
+                            $('#banner-header').css('color', textColor);
+                        }
                         $('#canvas-container').css('top', '98px');
                         // save the banner text to update the title of the page
                         BANNER_TEXT = ' - ' + response.banners.headerText;
@@ -862,7 +873,18 @@
                     if (nfCommon.isDefinedAndNotNull(response.banners.footerText) && response.banners.footerText !== '') {
                         // update the footer text and show it
                         var bannerFooter = $('#banner-footer').text(response.banners.footerText).show();
-
+                        bannerFooter.css('background-color', response.banners.footerColor);
+                        if (nfCommon.isDefinedAndNotNull(response.banners.footerColor) && response.banners.footerColor !== '') {
+                        $('#banner-footer').css('background-color', response.banners.footerColor);
+                            var bgColor = $('#banner-footer').css('background-color');
+                            var rgb = bgColor.substring(4, bgColor.length-1).replace(/ /g, '').split(',');
+                            var brightness = Math.round((
+                                    (parseInt(rgb[0]) * 299) +
+                                    (parseInt(rgb[1]) * 587) +
+                                    (parseInt(rgb[2]) * 114)) / 1000);
+                            var textColor = brightness > 125 ? 'black' : 'white'
+                            $('#banner-footer').css('color', textColor);
+                        }
                         var updateBottom = function (elementId) {
                             var element = $('#' + elementId);
                             element.css('bottom', parseInt(bannerFooter.css('height'), 10) + 'px');

@@ -27,7 +27,10 @@ import javax.xml.bind.annotation.XmlType;
 public class BannerDTO {
 
     private String headerText;
+    private String headerColor;
     private String footerText;
+    private String footerColor;
+
 
     /* getters / setters */
     /**
@@ -60,6 +63,38 @@ public class BannerDTO {
 
     public void setHeaderText(String headerText) {
         this.headerText = headerText;
+    }
+
+    /**
+     * The banner footer color.
+     *
+     * @return The footer color
+     */
+    @ApiModelProperty(
+            value = "The footer color."
+    )
+    public String getFooterColor() {
+        return footerColor;
+    }
+
+    public void setFooterColor(String footerColor) {
+        this.footerColor = footerColor;
+    }
+
+    /**
+     * The banner header color.
+     *
+     * @return The header color
+     */
+    @ApiModelProperty(
+            value = "The header color."
+    )
+    public String getHeaderColor() {
+        return headerColor;
+    }
+
+    public void setHeaderColor(String headerColor) {
+        this.headerColor = headerColor;
     }
 
 }
