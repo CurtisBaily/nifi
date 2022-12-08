@@ -74,6 +74,7 @@
 
         <nifi.restore.directory />
         <nifi.ui.banner.text />
+        <nifi.ui.banner.color />
         <nifi.ui.autorefresh.interval>30 sec</nifi.ui.autorefresh.interval>
         <nifi.nar.library.directory>./lib</nifi.nar.library.directory>
         <nifi.nar.library.autoload.directory>./extensions</nifi.nar.library.autoload.directory>
